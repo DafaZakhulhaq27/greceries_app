@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+String contentPath = 'assets/content';
+String imagePath = 'assets/images';
+
 Color white = Colors.white;
 
 Color lightFontDark = const Color(0xff06161C);
 Color lightFontGrey = const Color(0xff979899);
 Color lightFontWhite = const Color(0xffFFFFFF);
-Color lightFontPrimary = const Color(0xff23AA49);
+Color lightColorPrimary = const Color(0xff23AA49);
 Color lightFontSecondary = const Color(0xffFF324B);
 Color lightFontStroke = const Color(0xffF1F1F5);
 Color lightFontLightGrey = const Color(0xffE0E0E0);
