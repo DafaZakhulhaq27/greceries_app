@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app/app_route.dart';
 import 'package:groceries_app/theme.dart';
 
 void main() {
@@ -12,16 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Greceries App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: white,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      initialRoute: '/',
+      onGenerateRoute: AppRoute().onGenerateRoute,
     );
   }
 }
