@@ -24,8 +24,12 @@ class AppRoute {
           routeSettings,
         );
       case '/detail-page':
+        final args = routeSettings.arguments as Map;
+
         return rightleftRoute(
-          const DetailPage(),
+          DetailPage(
+            args: args,
+          ),
           routeSettings,
         );
       default:

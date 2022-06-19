@@ -11,15 +11,16 @@ Color lightFontGrey = const Color(0xff979899);
 Color lightFontWhite = const Color(0xffFFFFFF);
 Color lightColorPrimary = const Color(0xff23AA49);
 Color lightFontSecondary = const Color(0xffFF324B);
-Color lightFontStroke = const Color(0xffF1F1F5);
+Color lightColorStroke = const Color(0xffF1F1F5);
 Color lightFontLightGrey = const Color(0xffE0E0E0);
 Color lightFontLightGrey2 = const Color(0xffF3F5F7);
+Color lightColorLightBG = const Color(0xffF3F5F7);
 
 Color darkFontGrey = const Color(0xff617986);
 Color darkFontDarkBG = const Color(0xff0D1F29);
 Color darkFontDarkBG2 = const Color(0xff1A3848);
 Color darkColorDarkBG3 = const Color(0xff2D5368);
-Color darkColorStroke = const Color(0xff203744);
+Color darkColorStroke = const Color(0xffF3F5F7);
 
 Color fuschia100 = const Color(0xffEF5DA8);
 Color fuschia80 = const Color(0xffF178B6);
@@ -50,6 +51,10 @@ TextStyle body16Medium = GoogleFonts.dmSans(
 );
 TextStyle body14Medium = GoogleFonts.dmSans(
   fontWeight: FontWeight.w500,
+  fontSize: 14,
+);
+TextStyle body14Bold = GoogleFonts.dmSans(
+  fontWeight: FontWeight.w700,
   fontSize: 14,
 );
 TextStyle body16Bold = GoogleFonts.dmSans(
