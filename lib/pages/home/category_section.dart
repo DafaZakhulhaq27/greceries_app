@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/theme.dart';
+import 'package:groceries_app/widgets/snackbar_alert.dart';
 
 import '../../widgets/load_more.dart';
 
@@ -44,7 +45,7 @@ class CategorySection extends StatelessWidget {
             child: Row(
               children: List.from(
                 dataCategory.map(
-                  (data) => categoryItem(data),
+                  (data) => categoryItem(data, context),
                 ),
               ),
             ),
@@ -54,36 +55,42 @@ class CategorySection extends StatelessWidget {
     );
   }
 
-  Container categoryItem(Map<String, String> data) {
-    return Container(
-      margin: const EdgeInsets.only(
-        right: 16,
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(19),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-              color: lightColorLightBG,
+  GestureDetector categoryItem(Map<String, String> data, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        final snackBar = snackBarAlert('Coming Soon');
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      },
+      child: Container(
+        margin: const EdgeInsets.only(
+          right: 16,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(19),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: lightColorLightBG,
+              ),
+              child: Image.asset(
+                '$contentPath/category_${data["image"]}.png',
+                width: 35,
+                height: 35,
+              ),
             ),
-            child: Image.asset(
-              '$contentPath/category_${data["image"]}.png',
-              width: 35,
-              height: 35,
+            const SizedBox(
+              height: 8,
             ),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          Text(
-            data["name"]!,
-            style: body14Medium.copyWith(
-              color: lightFontDark,
+            Text(
+              data["name"]!,
+              style: body14Medium.copyWith(
+                color: lightFontDark,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

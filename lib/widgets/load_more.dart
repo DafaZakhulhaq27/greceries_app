@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/theme.dart';
+import 'package:groceries_app/widgets/snackbar_alert.dart';
 
 class LabelLoadMore extends StatelessWidget {
   final String title;
@@ -20,10 +21,16 @@ class LabelLoadMore extends StatelessWidget {
             color: lightFontDark,
           ),
         ),
-        Text(
-          'See all',
-          style: body14Medium.copyWith(
-            color: lightColorPrimary,
+        GestureDetector(
+          onTap: () {
+            final snackBar = snackBarAlert('Coming Soon');
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
+          child: Text(
+            'See all',
+            style: body14Medium.copyWith(
+              color: lightColorPrimary,
+            ),
           ),
         ),
       ],

@@ -3,6 +3,7 @@ import 'package:groceries_app/theme.dart';
 import 'package:groceries_app/widgets/button_default.dart';
 import 'package:groceries_app/widgets/button_rounded.dart';
 import 'package:groceries_app/widgets/fixed.dart';
+import 'package:groceries_app/widgets/snackbar_alert.dart';
 
 class DetailPage extends StatefulWidget {
   final Map? args;
@@ -241,7 +242,10 @@ class _DetailPageState extends State<DetailPage> {
           bgColor: lightFontDark,
           textColor: white,
           textButton: 'Add to cart',
-          onPress: () => Navigator.pushNamed(context, '/home-page'),
+          onPress: () {
+            final snackBar = snackBarAlert('Berhasil Menambahkan Ke Cart');
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
         ),
       ),
     );
