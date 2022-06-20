@@ -174,13 +174,13 @@ class _DetailPageState extends State<DetailPage> {
                   height: 24,
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 240,
                   child: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
                       crossAxisSpacing: 16,
                       crossAxisCount: 2,
-                      height: 90,
+                      height: 120,
                     ),
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: descList.length,
@@ -195,6 +195,7 @@ class _DetailPageState extends State<DetailPage> {
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Image.asset(
@@ -206,6 +207,7 @@ class _DetailPageState extends State<DetailPage> {
                               width: 16,
                             ),
                             Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
