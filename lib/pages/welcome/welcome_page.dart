@@ -8,6 +8,8 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+
     return Container(
       padding: const EdgeInsets.all(36),
       decoration: BoxDecoration(
@@ -20,6 +22,8 @@ class WelcomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 70,
@@ -50,11 +54,17 @@ class WelcomePage extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              ButtonDefault(
-                bgColor: lightColorPrimary,
-                textColor: white,
-                textButton: 'Shop now',
-                onPress: () => Navigator.pushNamed(context, '/home-page'),
+              const SizedBox(
+                width: double.infinity,
+              ),
+              SizedBox(
+                width: screenSize.width > 390 ? 390 : double.infinity,
+                child: ButtonDefault(
+                  bgColor: lightColorPrimary,
+                  textColor: white,
+                  textButton: 'Shop now',
+                  onPress: () => Navigator.pushNamed(context, '/home-page'),
+                ),
               )
             ],
           ),

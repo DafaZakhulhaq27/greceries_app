@@ -12,28 +12,33 @@ class LabelLoadMore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: heading18Bold.copyWith(
-            color: lightFontDark,
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            final snackBar = snackBarAlert('Coming Soon');
-            ScaffoldMessenger.of(context).showSnackBar(snackBar);
-          },
-          child: Text(
-            'See all',
-            style: body14Medium.copyWith(
-              color: lightColorPrimary,
+    Size screenSize = MediaQuery.of(context).size;
+
+    return SizedBox(
+      width: screenSize.width > 390 ? 390 : double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: heading18Bold.copyWith(
+              color: lightFontDark,
             ),
           ),
-        ),
-      ],
+          GestureDetector(
+            onTap: () {
+              final snackBar = snackBarAlert('Coming Soon');
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
+            child: Text(
+              'See all',
+              style: body14Medium.copyWith(
+                color: lightColorPrimary,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

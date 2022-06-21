@@ -35,7 +35,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     Map productDetail = widget.args!['data'];
-
+    Size screenSize = MediaQuery.of(context).size;
     List<Map> descList = [
       {
         'image': '1',
@@ -177,9 +177,9 @@ class _DetailPageState extends State<DetailPage> {
                   height: 240,
                   child: GridView.builder(
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
+                        SliverGridDelegateWithFixedCrossAxisCountAndFixedHeight(
                       crossAxisSpacing: 16,
-                      crossAxisCount: 2,
+                      crossAxisCount: screenSize.width < 390 ? 1 : 2,
                       height: 120,
                     ),
                     physics: const NeverScrollableScrollPhysics(),
